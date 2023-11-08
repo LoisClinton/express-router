@@ -33,12 +33,12 @@ router.post("/", async (request, response) => {
 router.put("/:id", async (request, response) => {
   await User.update(
     {
-      name: await request.body.name,
-      age: await request.body.age,
+      name: request.body.name,
+      age: request.body.age,
     },
     {
       where: {
-        id: await request.params.id,
+        id: request.params.id,
       },
     }
   );
